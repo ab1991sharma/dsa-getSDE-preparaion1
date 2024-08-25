@@ -1,0 +1,41 @@
+class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Try programiz.pro");
+        int[] arr1 = new int[]{2,7,10,15};
+        int[] arr2 = new int[]{9,12,18,20,70};
+        int n = arr1.length;
+        int m = arr2.length;
+        int f = n + m;
+        int[] ans = new int[f];
+        
+        int fp = 0;
+        int sp = 0;
+        int k = 0;
+        while(fp < n && sp < m){
+            if(arr1[fp] <= arr2[sp]){
+                ans[k] = arr1[fp];
+                fp++;
+            }else if(arr1[fp] >= arr2[sp]){
+                ans[k] = arr2[sp];
+                sp++;
+            }
+            k++;
+        }
+        
+        while(fp < n ){
+            ans[k] = arr1[fp];
+            fp++;
+            k++;
+        }
+        
+        while(sp < m ){
+            ans[k] = arr2[sp];
+            sp++;
+            k++;
+        }
+        for(int i=0;i<ans.length;i++){
+            System.out.print(ans[i]);
+            System.out.print(" ");
+        }
+    }
+}
